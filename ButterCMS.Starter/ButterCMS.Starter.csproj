@@ -11,6 +11,7 @@
     <None Remove="ViewComponents\" />
     <None Remove="Views\Shared\Components\About\" />
     <None Remove="Views\Shared\Components\FeaturesSection\" />
+    <None Remove="Views\Shared\Components\TryitSection\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ButterCMS" Version="1.3.10" />
@@ -21,5 +22,6 @@
     <Folder Include="ViewComponents\" />
     <Folder Include="Views\Shared\Components\AboutSection\" />
     <Folder Include="Views\Shared\Components\FeaturesSection\" />
+    <Folder Include="Views\Shared\Components\TryitSection\" />
   </ItemGroup>
 </Project>
