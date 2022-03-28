@@ -6,8 +6,16 @@
 
   <ItemGroup>
     <None Remove="ButterCMS" />
+    <None Remove="Views\Shared\Components\" />
+    <None Remove="Views\Shared\Components\HeroSection\" />
+    <None Remove="ViewComponents\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ButterCMS" Version="1.3.10" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Shared\Components\" />
+    <Folder Include="Views\Shared\Components\HeroSection\" />
+    <Folder Include="ViewComponents\" />
   </ItemGroup>
 </Project>
