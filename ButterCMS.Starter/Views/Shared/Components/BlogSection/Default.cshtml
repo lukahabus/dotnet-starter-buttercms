@@ -1,4 +1,6 @@
-﻿<section id="blog" class="blog-section">
+﻿@model IEnumerable<ButterCMS.Models.Post>
+
+<section id="blog" class="blog-section">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-10">
@@ -17,49 +19,12 @@
                 </div>
             </div>
         </div>
+
         <div class="row justify-content-center">
-
-            <div class="col-lg-4 col-md-8 col-sm-10">
-                <div class="single-blog">
-                    <div class="blog-header">
-                        <img class="img-fluid"
-                             loading="lazy"
-                             src="https://cdn.buttercms.com/bGQip1SQSoevxZxIp5Jh"
-                             alt="">
-                    </div>
-                    <div class="blog-body">
-                        <h5 class="package-name"><a href="#">This is the latest blog post title</a></h5>
-                        <p>
-                            Lorem ipsum dolor sit amet, adipscing elitr, sit gifted sed diam nonumy
-                            eirmod tempor ividunt dolore.
-                        </p>
-                    </div>
-                    <div class="blog-footer">
-                        <a href="#0" class="main-btn btn-hover">Read More</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-8 col-sm-10">
-                <div class="single-blog">
-                    <div class="blog-header">
-                        <img class="img-fluid"
-                             loading="lazy"
-                             src="https://cdn.buttercms.com/bGQip1SQSoevxZxIp5Jh"
-                             alt="#">
-                    </div>
-                    <div class="blog-body">
-                        <h5 class="package-name"><a href="#">This is the latest blog post title</a></h5>
-                        <p>
-                            Lorem ipsum dolor sit amet, adipscing elitr, sit gifted sed diam nonumy
-                            eirmod tempor ividunt dolore.
-                        </p>
-                    </div>
-                    <div class="blog-footer">
-                        <a href="#0" class="main-btn btn-hover">Read More</a>
-                    </div>
-                </div>
-            </div>
+            @foreach (var post in Model)
+            {
+                @await Html.PartialAsync("_BlogPostTile", post)
+            }
         </div>
     </div>
 </section>

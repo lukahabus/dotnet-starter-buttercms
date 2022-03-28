@@ -1,0 +1,19 @@
+﻿@model ButterCMS.Models.Post
+
+<div class="col-lg-4 col-md-8 col-sm-10">
+    <div class="single-blog">
+        <div class="blog-header">
+            <img class="img-fluid"
+                 loading="lazy"
+                 src=@Model.FeaturedImage
+                 alt=@Model.FeaturedImageAlt>
+        </div>
+        <div class="blog-body">
+            <h5 class="package-name"><a href="#">@Model.Title</a></h5>
+            <p>@Model.Summary</p>
+        </div>
+        <div class="blog-footer">
+            <a asp-controller="Blog" asp-action="GetBlock" asp-route-slug="@Model.Slug" class="main-btn btn-hover">Read More</a>
+        </div>
+    </div>
+</div>
