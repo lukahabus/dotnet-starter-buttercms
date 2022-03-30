@@ -1,0 +1,125 @@
+﻿ @await Html.PartialAsync("_BlogNavigation", new AllBlogPostsNavigationState())
+
+<!-- Blog Post -->
+<section class="blog-posts">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8 blog-roll-cards">
+                <div class="row">
+                    <!--nested row for blogroll-->
+                    <div class="col-12 col-lg-6">
+                        <div class="blog-roll-card">
+                            <div class="blog-roll-card-meta">
+                                <h2 class="blog-roll-card-header"><a href="#">This a sample blog post.</a></h2>
+                                <ul class="blog-roll-card-meta-info">
+                                    <li>
+                                        <a href="javascript:void(0)"><img src="assets/images/team/team-1.png" alt="#"> Author Name</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <i class="lni lni-calendar"></i> 10 Feb 2023
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)"><i class="lni lni-tag"></i> Marketing</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="single-post-thumbnail">
+                                <img src="https://cdn.buttercms.com/bGQip1SQSoevxZxIp5Jh" alt="">
+                            </div>
+                            <div class="blog-roll-card-body">
+                                <p>
+                                    Welcome to ButterCMS! This an example blog post written using Butter.
+                                    Butter can be used as a full CMS for managing dynamic content and creating
+                                    pages across your entire website or app. Check out our
+                                    <a href="https://buttercms.com/docs/">development guides</a> for step-by-step
+                                    tutorials on setting this up...
+                                </p>
+                            </div>
+                            <div class="blog-roll-card-footer text-center">
+                                <a href="#0" class="main-btn btn-hover">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="blog-roll-card">
+                            <div class="blog-roll-card-meta">
+                                <h2 class="blog-roll-card-header"><a href="#">This a sample blog post.</a></h2>
+                                <ul class="blog-roll-card-meta-info">
+                                    <li>
+                                        <a href="javascript:void(0)"><img src="assets/images/team/team-1.png" alt="#"> Author Name</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <i class="lni lni-calendar"></i> 10 Feb 2023
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)"><i class="lni lni-tag"></i> Marketing</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="single-post-thumbnail">
+                                <img src="https://cdn.buttercms.com/bGQip1SQSoevxZxIp5Jh" alt="">
+                            </div>
+                            <div class="blog-roll-card-body">
+                                <p>
+                                    Welcome to ButterCMS! This an example blog post written using Butter.
+                                    Butter can be used as a full CMS for managing dynamic content and creating
+                                    pages across your entire website or app. Check out our
+                                    <a href="https://buttercms.com/docs/">development guides</a> for step-by-step
+                                    tutorials on setting this up...
+                                </p>
+                            </div>
+                            <div class="blog-roll-card-footer text-center">
+                                <a href="#0" class="main-btn btn-hover">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="blog-roll-card">
+                            <div class="blog-roll-card-meta">
+                                <h2 class="blog-roll-card-header"><a href="#">This a sample blog post.</a></h2>
+                                <ul class="blog-roll-card-meta-info">
+                                    <li>
+                                        <a href="javascript:void(0)"><img src="assets/images/team/team-1.png" alt="#"> Author Name</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <i class="lni lni-calendar"></i> 10 Feb 2023
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)"><i class="lni lni-tag"></i> Marketing</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="single-post-thumbnail">
+                                <img src="https://cdn.buttercms.com/bGQip1SQSoevxZxIp5Jh" alt="">
+                            </div>
+                            <div class="blog-roll-card-body">
+                                <p>
+                                    Welcome to ButterCMS! This an example blog post written using Butter.
+                                    Butter can be used as a full CMS for managing dynamic content and creating
+                                    pages across your entire website or app. Check out our
+                                    <a href="https://buttercms.com/docs/">development guides</a> for step-by-step
+                                    tutorials on setting this up...
+                                </p>
+                            </div>
+                            <div class="blog-roll-card-footer text-center">
+                                <a href="#0" class="main-btn btn-hover">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Widgets Column -->
+            <aside class="col-12 col-lg-4">
+                @await Html.PartialAsync("_BlogSearchFilter")
+
+                @await Component.InvokeAsync("BlogCategoriesFilter")
+            </aside>
+        </div>
+    </div>
+</section>

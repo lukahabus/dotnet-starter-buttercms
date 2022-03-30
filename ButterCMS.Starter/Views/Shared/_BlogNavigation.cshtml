@@ -1,0 +1,23 @@
+﻿@model IBlogNavigationState
+
+<section id="blog-roll" class="blog-roll-nav">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div className="section-title text-center">
+                    <h2>
+                        @Model.NavigationTitle
+                    </h2>
+                    <ul className="breadcrumb-nav">
+                        <li><a asp-controller="Home">Home</a></li>
+                        @if (Model.GetType() != typeof(AllBlogPostsNavigationState))
+                        {
+                            <a asp-controller="Blog">Blog</a>
+                        }
+                        <li>@Model.NavigationItemText</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

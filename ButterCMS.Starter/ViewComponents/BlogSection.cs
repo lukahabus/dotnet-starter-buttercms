@@ -8,26 +8,21 @@ namespace ButterCMS.Starter.ViewComponents
 {
     public class BlogSection : ViewComponent
     {
-        private readonly ButterCMSClient client;
+        private readonly BlogService blogService;
 
         private readonly int postsCount;
 
-        public BlogSection(ButterCMSClientService clientService, IConfiguration configuration) 
+        public BlogSection(BlogService blogService, IConfiguration configuration) 
         {
-            this.client = clientService.GetClient();
+            this.blogService = blogService;
             this.postsCount = Int32.Parse(configuration["BlogSection:PostsCount"]);
         }
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var postsResponse = await this.GetBlogPosts(1, this.postsCount);
+            var postsResponse = await this.blogService.GetBlogPosts(1, this.postsCount);
 
             return View(postsResponse.Data);
-        }
-
-        private async Task<ButterCMS.Models.PostsResponse> GetBlogPosts(int page, int pageSize)
-        {
-            return await this.client.ListPostsAsync(page, pageSize);
         }
     }
 }
