@@ -23,6 +23,8 @@ namespace ButterCMS.Starter
 
             services.AddScoped<ButterCMSClientService>();
             services.AddScoped<BlogService>();
+            services.AddScoped<CategoryService>();
+            services.AddScoped<TagService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

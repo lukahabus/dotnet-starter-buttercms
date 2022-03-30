@@ -7,16 +7,16 @@ namespace ButterCMS.Starter.ViewComponents
 {
     public class BlogCategoriesFilter : ViewComponent
     {
-        private readonly BlogService blogService;
+        private readonly CategoryService categoryService;
 
-        public BlogCategoriesFilter(BlogService blogService)
+        public BlogCategoriesFilter(CategoryService categoryService)
         {
-            this.blogService = blogService;
+            this.categoryService = categoryService;
         }
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            return View(await this.blogService.GetAllCategories());
+            return View(await this.categoryService.GetAllCategories());
         }
     }
 }

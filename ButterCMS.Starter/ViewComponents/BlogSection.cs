@@ -22,7 +22,7 @@ namespace ButterCMS.Starter.ViewComponents
         {
             var postsResponse = await this.blogService.GetBlogPosts(1, this.postsCount);
 
-            return View(postsResponse.Data);
+            return View(postsResponse);
         }
     }
 }
