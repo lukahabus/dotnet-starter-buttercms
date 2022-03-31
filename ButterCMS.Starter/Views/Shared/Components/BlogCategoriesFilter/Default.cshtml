@@ -1,8 +1,8 @@
 ﻿@model IEnumerable<ButterCMS.Models.Category>
 
-<div className="widget categories-widget">
-    <h5 className="widget-title">Categories</h5>
-    <ul className="categories-list">
+<div class="widget categories-widget">
+    <h5 class="widget-title">Categories</h5>
+    <ul class="categories-list">
         @foreach (var category in Model)
         {
             <a asp-controller="Blog" asp-action="Index" asp-route-categorySlug="@category.Slug" class="main-btn btn-hover">@category.Name</a>

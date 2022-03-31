@@ -4,11 +4,11 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12">
-                <div className="section-title text-center">
+                <div class="section-title text-center">
                     <h2>
                         @Model.NavigationTitle
                     </h2>
-                    <ul className="breadcrumb-nav">
+                    <ul class="breadcrumb-nav">
                         <li><a asp-controller="Home">Home</a></li>
                         @if (Model.GetType() != typeof(AllBlogPostsNavigationState))
                         {
