@@ -19,6 +19,7 @@
     <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
     <None Remove="Views\Blog\" />
     <None Remove="Views\Shared\Components\BlogCategoriesFilter\" />
+    <None Remove="Views\Shared\Components\Header\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ButterCMS" Version="1.3.10" />
@@ -36,5 +37,6 @@
     <Folder Include="Services\" />
     <Folder Include="Views\Blog\" />
     <Folder Include="Views\Shared\Components\BlogCategoriesFilter\" />
+    <Folder Include="Views\Shared\Components\Header\" />
   </ItemGroup>
 </Project>

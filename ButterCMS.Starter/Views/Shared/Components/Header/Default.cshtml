@@ -1,15 +1,7 @@
-﻿@{
-    var navigationItems = new Dictionary<string, string>
-    {
-        { "home", "Home" },
-        { "about", "About" },
-        { "features", "Features" },
-        { "tryit", "Try It" },
-        { "testimonials", "Testimonials" },
-        { "blog", "Blog" },
-    };
+﻿@model IEnumerable<NavigationItemViewModel>
 
-    var defaultActiveItemKey = "home";
+@{
+    var defaultActiveItemUrl = "home";
 }
 
 <header class="header">
@@ -30,12 +22,12 @@
                         <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                             <div class="ms-auto">
                                 <ul id="nav" class="navbar-nav ms-auto">
-                                    @foreach (var item in navigationItems)
+                                    @foreach (var item in Model)
                                     {
-                                        var itemClasses = item.Key == defaultActiveItemKey ? "page-scroll active" : "page-scroll";
+                                        var itemClasses = item.Url == defaultActiveItemUrl ? "page-scroll active" : "page-scroll";
 
                                         <li class="nav-item">
-                                            <a asp-controller="Home" asp-action="Index" asp-fragment="@item.Key" class="@itemClasses">@item.Value</a>
+                                            <a asp-controller="Home" asp-action="Index" asp-fragment="@item.Url" class="@itemClasses">@item.Label</a>
                                         </li>
                                     }
                                 </ul>

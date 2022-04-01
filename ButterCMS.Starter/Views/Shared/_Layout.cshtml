@@ -24,7 +24,7 @@
 <body>
     <partial name="/Views/Shared/Preloader.cshtml" />
 
-    <partial name="/Views/Shared/Header.cshtml" />
+    @await Component.InvokeAsync("Header")
 
     @RenderBody()
 
