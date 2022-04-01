@@ -61,4 +61,25 @@ namespace ButterCMS.Starter.Models
             }
         }
     }
+
+    public class BlogPostNavigationState : IBlogNavigationState
+    {
+        public string NavigationTitle
+        {
+            get
+            {
+                return Post.Title;
+            }
+        }
+
+        public Post Post { get; set; }
+
+        public string NavigationItemText
+        {
+            get
+            {
+                return Post.Title;
+            }
+        }
+    }
 }

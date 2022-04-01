@@ -10,16 +10,16 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="https://buttercms.com/static/v2/images/favicon.png" />
 
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/lineicons.css" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/assets/css/lineicons.css" />
+    <link rel="stylesheet" href="~/assets/css/main.css" />
 
     <link rel="preload"
-          href="assets/css/tiny-slider.css"
+          href="~/assets/css/tiny-slider.css"
           as="style"
           onload="this.onload=null;this.rel='stylesheet'">
 
-    <noscript><link rel="stylesheet" href="assets/css/tiny-slider.css"></noscript>
+    <noscript><link rel="stylesheet" href="~/assets/css/tiny-slider.css"></noscript>
 </head>
 <body>
     <partial name="/Views/Shared/Preloader.cshtml" />
@@ -34,13 +34,13 @@
         <i class="lni lni-chevron-up"></i>
     </a>
 
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/polyfill.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/polyfill.js"></script>
+    <script src="~/assets/js/main.js"></script>
 
-    <script src="assets/js/tiny-slider.js"></script>
-    <script src="assets/js/client-slider.js"></script>
-    <script src="assets/js/section-menu.js"></script>
+    <script src="~/assets/js/tiny-slider.js"></script>
+    <script src="~/assets/js/client-slider.js"></script>
+    <script src="~/assets/js/section-menu.js"></script>
 
     @RenderSection("Scripts", required: false)
 </body>

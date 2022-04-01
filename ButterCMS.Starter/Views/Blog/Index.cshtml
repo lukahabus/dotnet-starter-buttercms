@@ -1,9 +1,5 @@
 ﻿@model BlogIndexViewModel
 
-@{
-    string authorProfilePicturePlaceHolder = "~/Views/Project/ProjectStatus/";
-}
-
 @await Html.PartialAsync("_BlogNavigation", Model.NavigationState)
 
 <section class="blog-posts">
@@ -17,33 +13,8 @@
                         {
                             <div class="col-12 col-lg-6">
                                 <div class="blog-roll-card">
-                                    <div class="blog-roll-card-meta">
-                                        <h2 class="blog-roll-card-header">
-                                            <a asp-controller="Blog" asp-action="Post" asp-route-slug="@post.Slug" class="main-btn btn-hover">@post.Title</a>
-                                        </h2>
-                                        <ul class="blog-roll-card-meta-info">
-                                            <li>
-                                                <a href="javascript:void(0)"><img src="@(post.Author.ProfileImage ?? authorProfilePicturePlaceHolder)" alt="#">@post.Author.FirstName @post.Author.LastName</a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:void(0)">
-                                                    <i class="lni lni-calendar"></i> @post.Published
-                                                </a>
-                                            </li>
-                                            <li>
-                                                @foreach (var tag in post.Tags)
-                                                {
-                                                    <a asp-controller="Blog" asp-action="Index" asp-route-tagSlug="@tag.Slug"><i class="lni lni-tag"></i>@tag.Name</a>
-                                                }
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    @if (post.FeaturedImage != null)
-                                    {
-                                        <div class="single-post-thumbnail">
-                                            <img src="@post.FeaturedImage" alt="@post.FeaturedImageAlt">
-                                        </div>
-                                    }
+                                    @await Html.PartialAsync("_BlogPostPreamble", post)
+
                                     <div class="blog-roll-card-body">
                                         <p>@post.Summary</p>
                                     </div>

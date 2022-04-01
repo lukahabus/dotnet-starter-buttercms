@@ -1,0 +1,28 @@
+﻿@model ButterCMS.Models.Post
+
+@await Html.PartialAsync("_BlogNavigation", new BlogPostNavigationState
+{
+    Post = Model
+})
+
+<section class="blog-post">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-12 col-12">
+                <div class="single-post">
+                    @await Html.PartialAsync("_BlogPostPreamble", Model)
+
+                    <div class="single-post-body">
+                        @Html.Raw(Model.Body)
+                    </div>
+                </div>
+            </div>
+
+            <aside class="col-12 col-lg-4">
+                @await Html.PartialAsync("_BlogSearchFilter", new BlogSearchFilterViewModel { SearchQuery = null })
+
+                @await Component.InvokeAsync("BlogCategoriesFilter")
+            </aside>
+        </div>
+    </div>
+</section>

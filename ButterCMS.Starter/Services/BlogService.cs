@@ -40,5 +40,12 @@ namespace ButterCMS.Starter.Services
 
             return posts.Data;
         }
+
+        public async Task<ButterCMS.Models.Post> GetBlogPost(string slug)
+        {
+            var post = await this.client.RetrievePostAsync(slug);
+
+            return post.Data;
+        }
     }
 }

@@ -75,10 +75,10 @@ namespace ButterCMS.Starter.Controllers
             });
         }
 
-        [HttpGet("{slug}")]
-        public ActionResult Post(string slug)
+        [Route("{controller}/{action}/{slug}")]
+        public async Task<ActionResult> Post(string slug)
         {
-            return View();
+            return View(await this.blogService.GetBlogPost(slug));
         }
     }
 }
