@@ -6,26 +6,30 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ButterCMS.Starter.Models;
+using Microsoft.Extensions.Configuration;
+using ButterCMS.Starter.Services;
 
 namespace ButterCMS.Starter.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly string defaultLandingPageSlug;
 
-        public HomeController(ILogger<HomeController> logger)
+
+        private readonly PageService pageService;
+
+        public HomeController(IConfiguration configuration, PageService pageService)
         {
-            _logger = logger;
+            this.defaultLandingPageSlug = configuration["DefaultLandingPageSlug"];
+
+            this.pageService = pageService;
         }
 
-        public IActionResult Index()
+        [Route("/")]
+        [Route("/landing-page/{slug}")]
+        public async Task<IActionResult> Index(string slug = null)
         {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
+            return View(await this.pageService.GetLandingPage(slug ?? this.defaultLandingPageSlug));
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

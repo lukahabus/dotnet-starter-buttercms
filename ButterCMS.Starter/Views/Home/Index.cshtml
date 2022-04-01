@@ -1,4 +1,6 @@
-﻿@await Component.InvokeAsync("HeroSection")
+﻿@model LandingPageViewModel
+
+@await Html.PartialAsync("_HeroSection", Model.HeroSection)
 
 @await Component.InvokeAsync("AboutSection")
 

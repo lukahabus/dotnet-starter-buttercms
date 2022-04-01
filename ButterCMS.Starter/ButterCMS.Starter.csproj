@@ -8,7 +8,6 @@
   <ItemGroup>
     <None Remove="ButterCMS" />
     <None Remove="Views\Shared\Components\" />
-    <None Remove="Views\Shared\Components\HeroSection\" />
     <None Remove="ViewComponents\" />
     <None Remove="Views\Shared\Components\AboutSection\" />
     <None Remove="Views\Shared\Components\FeaturesSection\" />
@@ -27,7 +26,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Shared\Components\" />
-    <Folder Include="Views\Shared\Components\HeroSection\" />
     <Folder Include="ViewComponents\" />
     <Folder Include="Views\Shared\Components\AboutSection\" />
     <Folder Include="Views\Shared\Components\FeaturesSection\" />
