@@ -8,6 +8,6 @@
 
 @await Html.PartialAsync("_ImageWithTextSection", Model.TryitSection)
 
-@await Component.InvokeAsync("TestimonialsSection")
+@await Html.PartialAsync("_TestimonialsSection", Model.TestimonialsSection)
 
 @await Component.InvokeAsync("BlogSection")

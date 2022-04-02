@@ -46,7 +46,7 @@ namespace ButterCMS.Starter.Services
                             ButtonLabel = this.GetStringFieldFromJson(item, "button_label"),
                             ButtonUrl = this.GetStringFieldFromJson(item, "button_url"),
                             Image = this.GetStringFieldFromJson(item, "image"),
-                            SubHeadline = this.GetStringFieldFromJson(item, "subheadline"),
+                            SubHeadline = this.GetSubHeadline(item),
                         };
                         break;
 
@@ -63,8 +63,17 @@ namespace ButterCMS.Starter.Services
                         {
                             ScrollAnchorId = scrollAnchorId,
                             Headline = headline,
-                            SubHeadline = this.GetStringFieldFromJson(item, "subheadline"),
+                            SubHeadline = this.GetSubHeadline(item),
                             Features = this.MapFeaturesViewModel(item),
+                        };
+                        break;
+
+                    case "testimonials":
+                        result.TestimonialsSection = new TestimonialsSectionViewModel()
+                        {
+                            ScrollAnchorId = scrollAnchorId,
+                            Headline = headline,
+                            Testimonials = this.MapTestimonialViewModel(item)
                         };
                         break;
                 }
@@ -83,7 +92,7 @@ namespace ButterCMS.Starter.Services
             ButtonLabel = this.GetStringFieldFromJson(json, "button_label"),
             ButtonUrl = this.GetStringFieldFromJson(json, "button_url"),
             Image = this.GetStringFieldFromJson(json, "image"),
-            SubHeadline = this.GetStringFieldFromJson(json, "subheadline"),
+            SubHeadline = this.GetSubHeadline(json),
             ImagePosition = this.GetStringFieldFromJson(json, "image_position")
         };
 
@@ -96,6 +105,20 @@ namespace ButterCMS.Starter.Services
                 Icon = (string)feature["icon"],
                 Description = (string)feature["description"],
                 Headline = (string)feature["headline"],
+            }).ToArray();
+        }
+
+        private string GetSubHeadline(JObject json) => this.GetStringFieldFromJson(json, "subheadline");
+
+        private TestimonialViewModel[] MapTestimonialViewModel(JObject json)
+        {
+            var testimonials = json["fields"]["testimonial"].ToArray();
+
+            return testimonials.Select(testimonial => new TestimonialViewModel()
+            {
+                Title = (string)testimonial["title"],
+                Quote = (string)testimonial["quote"],
+                Name = (string)testimonial["name"],
             }).ToArray();
         }
     }
