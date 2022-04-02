@@ -2,11 +2,11 @@
 
 @await Html.PartialAsync("_HeroSection", Model.HeroSection)
 
-@await Html.PartialAsync("_AboutSection", Model.AboutSection)
+@await Html.PartialAsync("_ImageWithTextSection", Model.AboutSection)
 
 @await Component.InvokeAsync("FeaturesSection")
 
-@await Component.InvokeAsync("TryitSection")
+@await Html.PartialAsync("_ImageWithTextSection", Model.TryitSection)
 
 @await Component.InvokeAsync("TestimonialsSection")
 

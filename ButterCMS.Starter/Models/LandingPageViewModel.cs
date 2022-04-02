@@ -9,7 +9,9 @@ namespace ButterCMS.Starter.Models
 
         public HeroSectionViewModel HeroSection { get; set; }
 
-        public AboutSectionViewModel AboutSection { get; set; }
+        public ImageWithTextSectionViewModel AboutSection { get; set; }
+
+        public ImageWithTextSectionViewModel TryitSection { get; set; }
     }
 
     public abstract class LandingPageSection
@@ -30,7 +32,7 @@ namespace ButterCMS.Starter.Models
         public string Image { get; set; }
     }
 
-    public class AboutSectionViewModel : HeroSectionViewModel
+    public class ImageWithTextSectionViewModel : HeroSectionViewModel
     {
         public string ImagePosition { get; set; }
     }

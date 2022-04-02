@@ -50,30 +50,13 @@ namespace ButterCMS.Starter.Services
                         break;
 
                     case "about":
-                        result.AboutSection = new AboutSectionViewModel()
-                        {
-                            ScrollAnchorId = scrollAnchorId,
-                            Headline = headline,
-                            ButtonLabel = this.GetStringFieldFromJson(item, "button_label"),
-                            ButtonUrl = this.GetStringFieldFromJson(item, "button_url"),
-                            Image = this.GetStringFieldFromJson(item, "image"),
-                            SubHeadline = this.GetStringFieldFromJson(item, "subheadline"),
-                            ImagePosition = this.GetStringFieldFromJson(item, "image_position")
-                        };
+                        result.AboutSection = this.MapImageWithTextSectionViewModel(item, scrollAnchorId, headline);
                         break;
 
-                    //case "tryit":
-                    //    result.AboutSection = new AboutSectionViewModel()
-                    //    {
-                    //        ScrollAnchorId = scrollAnchorId,
-                    //        Headline = headline,
-                    //        ButtonLabel = this.GetStringFieldFromJson(item, "button_label"),
-                    //        ButtonUrl = this.GetStringFieldFromJson(item, "button_url"),
-                    //        Image = this.GetStringFieldFromJson(item, "image"),
-                    //        SubHeadline = this.GetStringFieldFromJson(item, "subheadline"),
-                    //        ImagePosition = this.GetStringFieldFromJson(item, "image_position")
-                    //    };
-                    //    break;
+                    case "tryit":
+                        result.TryitSection = this.MapImageWithTextSectionViewModel(item, scrollAnchorId, headline);
+                        break;
+
                 }
             }
 
@@ -81,5 +64,17 @@ namespace ButterCMS.Starter.Services
         }
 
         private string GetStringFieldFromJson(JObject json, string property) => (string)json["fields"][property];
+
+        private ImageWithTextSectionViewModel MapImageWithTextSectionViewModel(JObject json, string scrollAnchorId, string headline)
+            => new ImageWithTextSectionViewModel()
+        {
+            ScrollAnchorId = scrollAnchorId,
+            Headline = headline,
+            ButtonLabel = this.GetStringFieldFromJson(json, "button_label"),
+            ButtonUrl = this.GetStringFieldFromJson(json, "button_url"),
+            Image = this.GetStringFieldFromJson(json, "image"),
+            SubHeadline = this.GetStringFieldFromJson(json, "subheadline"),
+            ImagePosition = this.GetStringFieldFromJson(json, "image_position")
+        };
     }
 }
