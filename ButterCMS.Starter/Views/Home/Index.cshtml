@@ -2,7 +2,7 @@
 
 @await Html.PartialAsync("_HeroSection", Model.HeroSection)
 
-@await Component.InvokeAsync("AboutSection")
+@await Html.PartialAsync("_AboutSection", Model.AboutSection)
 
 @await Component.InvokeAsync("FeaturesSection")
 

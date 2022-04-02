@@ -31,15 +31,13 @@ namespace ButterCMS.Starter.Services
 
             foreach (var item in response.Data.Fields.body)
             {
-                string section = (string)item["type"];
-
                 string scrollAnchorId = this.GetStringFieldFromJson(item, "scroll_anchor_id");
 
                 string headline = this.GetStringFieldFromJson(item, "headline");
 
-                switch (section)
+                switch (scrollAnchorId)
                 {
-                    case "hero":
+                    case "home":
                         result.HeroSection = new HeroSectionViewModel()
                         {
                             ScrollAnchorId = scrollAnchorId,
@@ -48,8 +46,34 @@ namespace ButterCMS.Starter.Services
                             ButtonUrl = this.GetStringFieldFromJson(item, "button_url"),
                             Image = this.GetStringFieldFromJson(item, "image"),
                             SubHeadline = this.GetStringFieldFromJson(item, "subheadline"),
-                };
+                        };
                         break;
+
+                    case "about":
+                        result.AboutSection = new AboutSectionViewModel()
+                        {
+                            ScrollAnchorId = scrollAnchorId,
+                            Headline = headline,
+                            ButtonLabel = this.GetStringFieldFromJson(item, "button_label"),
+                            ButtonUrl = this.GetStringFieldFromJson(item, "button_url"),
+                            Image = this.GetStringFieldFromJson(item, "image"),
+                            SubHeadline = this.GetStringFieldFromJson(item, "subheadline"),
+                            ImagePosition = this.GetStringFieldFromJson(item, "image_position")
+                        };
+                        break;
+
+                    //case "tryit":
+                    //    result.AboutSection = new AboutSectionViewModel()
+                    //    {
+                    //        ScrollAnchorId = scrollAnchorId,
+                    //        Headline = headline,
+                    //        ButtonLabel = this.GetStringFieldFromJson(item, "button_label"),
+                    //        ButtonUrl = this.GetStringFieldFromJson(item, "button_url"),
+                    //        Image = this.GetStringFieldFromJson(item, "image"),
+                    //        SubHeadline = this.GetStringFieldFromJson(item, "subheadline"),
+                    //        ImagePosition = this.GetStringFieldFromJson(item, "image_position")
+                    //    };
+                    //    break;
                 }
             }
 

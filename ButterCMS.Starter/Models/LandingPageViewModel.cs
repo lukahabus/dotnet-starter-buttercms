@@ -8,6 +8,8 @@ namespace ButterCMS.Starter.Models
         public SEOViewModel SEOViewModel { get; set; }
 
         public HeroSectionViewModel HeroSection { get; set; }
+
+        public AboutSectionViewModel AboutSection { get; set; }
     }
 
     public abstract class LandingPageSection
@@ -26,6 +28,11 @@ namespace ButterCMS.Starter.Models
         public string ButtonLabel { get; set; }
 
         public string Image { get; set; }
+    }
+
+    public class AboutSectionViewModel : HeroSectionViewModel
+    {
+        public string ImagePosition { get; set; }
     }
 
     public class LandingPageJSONObject
