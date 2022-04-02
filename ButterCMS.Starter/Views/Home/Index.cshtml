@@ -4,7 +4,7 @@
 
 @await Html.PartialAsync("_ImageWithTextSection", Model.AboutSection)
 
-@await Component.InvokeAsync("FeaturesSection")
+@await Html.PartialAsync("_FeaturesSection", Model.FeaturesSection)
 
 @await Html.PartialAsync("_ImageWithTextSection", Model.TryitSection)
 

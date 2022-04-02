@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using ButterCMS.Starter.Models;
 using Newtonsoft.Json.Linq;
+using System.Linq;
 
 namespace ButterCMS.Starter.Services
 {
@@ -57,6 +58,15 @@ namespace ButterCMS.Starter.Services
                         result.TryitSection = this.MapImageWithTextSectionViewModel(item, scrollAnchorId, headline);
                         break;
 
+                    case "features":
+                        result.FeaturesSection = new FeaturesSectionViewModel()
+                        {
+                            ScrollAnchorId = scrollAnchorId,
+                            Headline = headline,
+                            SubHeadline = this.GetStringFieldFromJson(item, "subheadline"),
+                            Features = this.MapFeaturesViewModel(item),
+                        };
+                        break;
                 }
             }
 
@@ -76,5 +86,17 @@ namespace ButterCMS.Starter.Services
             SubHeadline = this.GetStringFieldFromJson(json, "subheadline"),
             ImagePosition = this.GetStringFieldFromJson(json, "image_position")
         };
+
+        private FeatureViewModel[] MapFeaturesViewModel(JObject json)
+        {
+            var features = json["fields"]["features"].ToArray();
+
+            return features.Select(feature => new FeatureViewModel()
+            {
+                Icon = (string)feature["icon"],
+                Description = (string)feature["description"],
+                Headline = (string)feature["headline"],
+            }).ToArray();
+        }
     }
 }

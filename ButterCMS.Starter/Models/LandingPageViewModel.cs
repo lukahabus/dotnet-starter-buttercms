@@ -12,6 +12,8 @@ namespace ButterCMS.Starter.Models
         public ImageWithTextSectionViewModel AboutSection { get; set; }
 
         public ImageWithTextSectionViewModel TryitSection { get; set; }
+
+        public FeaturesSectionViewModel FeaturesSection { get; set; }
     }
 
     public abstract class LandingPageSection
@@ -19,13 +21,14 @@ namespace ButterCMS.Starter.Models
         public string ScrollAnchorId { get; set; }
 
         public string Headline { get; set; }
+
+        public string SubHeadline { get; set; }
+
     }
 
     public class HeroSectionViewModel : LandingPageSection
     {
         public string ButtonUrl { get; set; }
-
-        public string SubHeadline { get; set; }
 
         public string ButtonLabel { get; set; }
 
@@ -35,6 +38,20 @@ namespace ButterCMS.Starter.Models
     public class ImageWithTextSectionViewModel : HeroSectionViewModel
     {
         public string ImagePosition { get; set; }
+    }
+
+    public class FeatureViewModel
+    {
+        public string Headline { get; set; }
+
+        public string Icon { get; set; }
+
+        public string Description { get; set; }
+    }
+
+    public class FeaturesSectionViewModel : LandingPageSection
+    {
+        public FeatureViewModel[] Features { get; set; }
     }
 
     public class LandingPageJSONObject

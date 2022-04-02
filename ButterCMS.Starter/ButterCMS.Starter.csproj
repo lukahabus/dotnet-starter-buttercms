@@ -9,7 +9,6 @@
     <None Remove="ButterCMS" />
     <None Remove="Views\Shared\Components\" />
     <None Remove="ViewComponents\" />
-    <None Remove="Views\Shared\Components\FeaturesSection\" />
     <None Remove="Views\Shared\Components\TestimonialsSection\" />
     <None Remove="Views\Shared\Components\BlogSection\" />
     <None Remove="Services\" />
@@ -25,7 +24,6 @@
   <ItemGroup>
     <Folder Include="Views\Shared\Components\" />
     <Folder Include="ViewComponents\" />
-    <Folder Include="Views\Shared\Components\FeaturesSection\" />
     <Folder Include="Views\Shared\Components\TestimonialsSection\" />
     <Folder Include="Views\Shared\Components\BlogSection\" />
     <Folder Include="Services\" />
