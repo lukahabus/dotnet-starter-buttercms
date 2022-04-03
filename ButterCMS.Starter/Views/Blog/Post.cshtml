@@ -1,5 +1,11 @@
 ﻿@model ButterCMS.Models.Post
 
+@{
+    ViewBag.Title = Model.Title;
+    ViewBag.Description = Model.MetaDescription;
+    ViewBag.Image = Model.FeaturedImage;
+}
+
 @await Html.PartialAsync("_BlogNavigation", new BlogPostNavigationState
 {
     Post = Model

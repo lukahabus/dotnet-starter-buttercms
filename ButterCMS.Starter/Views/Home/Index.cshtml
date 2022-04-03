@@ -1,5 +1,10 @@
 ﻿@model LandingPageViewModel
 
+@{
+    ViewBag.Title = Model.SEOViewModel.Title;
+    ViewBag.Description = Model.SEOViewModel.Description;
+}
+
 @await Html.PartialAsync("_HeroSection", Model.HeroSection)
 
 @await Html.PartialAsync("_ImageWithTextSection", Model.AboutSection)

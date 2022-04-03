@@ -34,7 +34,12 @@ namespace ButterCMS.Starter.Controllers
                     NavigationState = new SearchedBlogPostsNavigationState
                     {
                         SearchText = searchQuery
-                    }
+                    },
+                    SEOViewModel = new SEOViewModel()
+                    {
+                        Title = ComposePageTitle($"search result for {searchQuery}"),
+                        Description = ComposePageDescription($"search results for {searchQuery}"),
+                    },
                 };
 
                 return View(viewModel);
@@ -42,13 +47,20 @@ namespace ButterCMS.Starter.Controllers
 
             if (categorySlug != null)
             {
+                var category = await this.categoryService.FindCategory(categorySlug);
+
                 var viewModel = new BlogIndexViewModel
                 {
                     Posts = await blogService.GetBlogPostsByCategory(categorySlug),
                     NavigationState = new BlogPostsByCategoryNavigationState
                     {
-                        Category = await this.categoryService.FindCategory(categorySlug)
-                    }
+                        Category = category
+                    },
+                    SEOViewModel = new SEOViewModel()
+                    {
+                        Title = ComposePageTitle($"category: {category.Name}"),
+                        Description = ComposePageDescription($"category: {category.Name}"),
+                    },
                 };
 
                 return View(viewModel);
@@ -56,13 +68,20 @@ namespace ButterCMS.Starter.Controllers
 
             if (tagSlug != null)
             {
+                var tag = await this.tagService.FindTag(tagSlug);
+
                 var viewModel = new BlogIndexViewModel
                 {
                     Posts = await blogService.GetBlogPostsByTag(tagSlug),
                     NavigationState = new BlogPostsByTagNavigationState
                     {
-                        Tag = await this.tagService.FindTag(tagSlug)
-                    }
+                        Tag = tag
+                    },
+                    SEOViewModel = new SEOViewModel()
+                    {
+                        Title = ComposePageTitle($"tag: {tag.Name}"),
+                        Description = ComposePageDescription($"tag: {tag.Name}"),
+                    },
                 };
 
                 return View(viewModel);
@@ -71,7 +90,12 @@ namespace ButterCMS.Starter.Controllers
             return View(new BlogIndexViewModel
             {
                 Posts = await this.blogService.GetBlogPosts(),
-                NavigationState = new AllBlogPostsNavigationState()
+                NavigationState = new AllBlogPostsNavigationState(),
+                SEOViewModel = new SEOViewModel()
+                {
+                    Title = ComposePageTitle("all posts"),
+                    Description = ComposePageDescription("all posts"),
+                },
             });
         }
 
@@ -80,5 +104,9 @@ namespace ButterCMS.Starter.Controllers
         {
             return View(await this.blogService.GetBlogPost(slug));
         }
+
+        private string ComposePageTitle(string type) => $"Sample Blog - {type}";
+
+        private string ComposePageDescription(string type) => $"Sample blog powered by ButterCMS, showing {type}";
     }
 }

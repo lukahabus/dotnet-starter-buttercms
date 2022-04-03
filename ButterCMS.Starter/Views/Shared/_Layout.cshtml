@@ -4,9 +4,13 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Sample Landing Page with Components - powered by ButterCMS" />
+    <meta name="description" content="@ViewBag.Description" />
+    @if (ViewBag.Image != null)
+    {
+        <meta name="image" content="@ViewBag.Image" />
+    } 
 
-    <title>Sample Landing Page with Components - powered by ButterCMS</title>
+    <title>@ViewBag.Title</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="https://buttercms.com/static/v2/images/favicon.png" />
 

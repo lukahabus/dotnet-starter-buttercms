@@ -8,5 +8,7 @@ namespace ButterCMS.Starter.Models
         public IBlogNavigationState NavigationState { get; set; }
 
         public IEnumerable<ButterCMS.Models.Post> Posts { get; set; }
+
+        public SEOViewModel SEOViewModel { get; set; }
     }
 }

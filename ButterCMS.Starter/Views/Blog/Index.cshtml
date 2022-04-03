@@ -1,5 +1,10 @@
 ﻿@model BlogIndexViewModel
 
+@{
+    ViewBag.Title = Model.SEOViewModel.Title;
+    ViewBag.Description = Model.SEOViewModel.Description;
+}
+
 @await Html.PartialAsync("_BlogNavigation", Model.NavigationState)
 
 <section class="blog-posts">
