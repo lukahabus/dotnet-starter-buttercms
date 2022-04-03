@@ -24,7 +24,7 @@ namespace ButterCMS.Starter.Services
         {
             var posts = await this.client.SearchPostsAsync(query);
 
-            return posts.Data;
+            return posts?.Data;
         }
 
         public async Task<IEnumerable<ButterCMS.Models.Post>> GetBlogPostsByCategory(string categorySlug, int page = 1, int pageSize = 10)

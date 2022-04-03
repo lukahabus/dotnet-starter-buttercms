@@ -2,12 +2,15 @@
 
 <div class="col-lg-4 col-md-8 col-sm-10">
     <div class="single-blog">
-        <div class="blog-header">
-            <img class="img-fluid"
-                 loading="lazy"
-                 src=@Model.FeaturedImage
-                 alt=@Model.FeaturedImageAlt>
-        </div>
+        @if (Model.FeaturedImage != null)
+        {
+            <div class="blog-header">
+                <img class="img-fluid"
+                     loading="lazy"
+                     src=@Model.FeaturedImage
+                     alt=@Model.FeaturedImageAlt>
+            </div>
+        }
         <div class="blog-body">
             <h5 class="package-name"><a asp-controller="Blog" asp-action="Post" asp-route-slug="@Model.Slug">@Model.Title</a></h5>
             <p>@Model.Summary</p>

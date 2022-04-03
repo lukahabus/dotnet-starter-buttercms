@@ -93,7 +93,7 @@ namespace ButterCMS.Starter.Controllers
                 NavigationState = new AllBlogPostsNavigationState(),
                 SEOViewModel = new SEOViewModel()
                 {
-                    Title = ComposePageTitle("all posts"),
+                    Title = ComposePageTitle("All posts"),
                     Description = ComposePageDescription("all posts"),
                 },
             });

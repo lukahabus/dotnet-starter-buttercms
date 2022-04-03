@@ -12,7 +12,7 @@
         <div class="row justify-content-center">
             <div class="col-12 col-lg-8 blog-roll-cards">
                 <div class="row">
-                    @if (Model.Posts.Count() > 0)
+                    @if (Model.Posts != null && Model.Posts.Count() > 0)
                     {
                         @foreach (var post in Model.Posts)
                         {
