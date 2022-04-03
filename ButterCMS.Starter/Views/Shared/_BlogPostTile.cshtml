@@ -9,7 +9,7 @@
                  alt=@Model.FeaturedImageAlt>
         </div>
         <div class="blog-body">
-            <h5 class="package-name"><a href="#">@Model.Title</a></h5>
+            <h5 class="package-name"><a asp-controller="Blog" asp-action="Post" asp-route-slug="@Model.Slug">@Model.Title</a></h5>
             <p>@Model.Summary</p>
         </div>
         <div class="blog-footer">
