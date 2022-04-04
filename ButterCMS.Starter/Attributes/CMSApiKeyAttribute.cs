@@ -16,7 +16,7 @@ namespace ButterCMS.Starter.Attributes
 
         public void OnActionExecuting(ActionExecutingContext context)
         {
-            if (this.configuration["ButterCMS:APIKey"] == null)
+            if (this.configuration["ButterCMSAPIKey"] == null)
                 context.Result = new UnauthorizedResult();
         }
 

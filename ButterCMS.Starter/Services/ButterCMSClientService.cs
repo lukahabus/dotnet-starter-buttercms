@@ -9,7 +9,7 @@ namespace ButterCMS.Starter.Services
 
         public ButterCMSClientService(IConfiguration configuration)
         {
-            this.apiKey = configuration["ButterCMS:APIKey"];
+            this.apiKey = configuration["ButterCMSAPIKey"];
         }
 
         public ButterCMSClient GetClient() => new ButterCMSClient(this.apiKey);
