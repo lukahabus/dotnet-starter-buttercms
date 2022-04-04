@@ -15,7 +15,6 @@ namespace ButterCMS.Starter.Controllers
     {
         private readonly string defaultLandingPageSlug;
 
-
         private readonly PageService pageService;
 
         public HomeController(IConfiguration configuration, PageService pageService)
