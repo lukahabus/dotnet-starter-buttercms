@@ -27,12 +27,16 @@
 </head>
 <body>
     <partial name="/Views/Shared/Preloader.cshtml" />
-
-    @await Component.InvokeAsync("Header")
+    @if (ViewBag.NoHeader == null || !ViewBag.NoHeader)
+    {
+        @await Component.InvokeAsync("Header");
+    }
 
     @RenderBody()
 
-    @await Component.InvokeAsync("Footer") 
+    @if (ViewBag.NoFooter == null || !ViewBag.NoFooter)
+        @await Component.InvokeAsync("Footer");
+    }
 
     <a href="#" class="scroll-top btn-hover">
         <i class="lni lni-chevron-up"></i>

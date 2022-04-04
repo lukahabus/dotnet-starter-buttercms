@@ -8,9 +8,11 @@ using Microsoft.Extensions.Logging;
 using ButterCMS.Starter.Models;
 using Microsoft.Extensions.Configuration;
 using ButterCMS.Starter.Services;
+using ButterCMS.Starter.Attributes;
 
 namespace ButterCMS.Starter.Controllers
 {
+    [TypeFilter(typeof(WithApiKeyAttribute))]
     public class HomeController : Controller
     {
         private readonly string defaultLandingPageSlug;

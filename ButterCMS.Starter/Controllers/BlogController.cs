@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ButterCMS.Starter.Attributes;
 using ButterCMS.Starter.Models;
 using ButterCMS.Starter.Services;
 using Microsoft.AspNetCore.Http;
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ButterCMS.Starter.Controllers
 {
+    [TypeFilter(typeof(WithApiKeyAttribute))]
     public class BlogController : Controller
     {
         private readonly BlogService blogService;
