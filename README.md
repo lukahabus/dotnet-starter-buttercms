@@ -2,7 +2,7 @@
 
 This .NET starter project fully integrates with dynamic sample content from your ButterCMS account, including main menu, pages, blog posts, categories, and tags, all with a beautiful, custom theme with already-implemented search functionality. All of the included sample content is automatically created in your account dashboard when you sign up for a free trial of ButterCMS.
 
-You can view a [live demo hosted on hosting provider](https://dotnet-starter-buttercms.azurewebsites.net), or you can click the button below to deploy your own copy of our starter project to the provider of your choice.
+You can view a [live demo hosted on Azure](https://dotnet-starter-buttercms.azurewebsites.net), or you can click the button below to deploy your own copy of our starter project to the provider of your choice.
 
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fvlnevyhosteny%2FButterCMS.Starter%2Fmain%2F.azure%2Ftemplate%2Ftemplate.json)
 
