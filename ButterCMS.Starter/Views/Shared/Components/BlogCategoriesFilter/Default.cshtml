@@ -5,7 +5,9 @@
     <ul class="categories-list">
         @foreach (var category in Model)
         {
-            <a asp-controller="Blog" asp-action="Index" asp-route-categorySlug="@category.Slug" class="main-btn btn-hover">@category.Name</a>
+            <li>
+                <a asp-controller="Blog" asp-action="Index" asp-route-categorySlug="@category.Slug">@category.Name</a>
+            </li>
         }
     </ul>
 </div>
