@@ -26,69 +26,8 @@ namespace ButterCMS.Starter.Controllers
             this.tagService = tagService;
         }
 
-        public async Task<ActionResult> Index(string searchQuery = null, string categorySlug = null, string tagSlug = null)
+        public async Task<ActionResult> Index()
         {
-            if (searchQuery != null)
-            {
-                var viewModel = new BlogIndexViewModel
-                {
-                    Posts = await blogService.SearchBlogPosts(searchQuery),
-                    NavigationState = new SearchedBlogPostsNavigationState
-                    {
-                        SearchText = searchQuery
-                    },
-                    SEOViewModel = new SEOViewModel()
-                    {
-                        Title = ComposePageTitle($"search result for {searchQuery}"),
-                        Description = ComposePageDescription($"search results for {searchQuery}"),
-                    },
-                };
-
-                return View(viewModel);
-            }
-
-            if (categorySlug != null)
-            {
-                var category = await this.categoryService.FindCategory(categorySlug);
-
-                var viewModel = new BlogIndexViewModel
-                {
-                    Posts = await blogService.GetBlogPostsByCategory(categorySlug),
-                    NavigationState = new BlogPostsByCategoryNavigationState
-                    {
-                        Category = category
-                    },
-                    SEOViewModel = new SEOViewModel()
-                    {
-                        Title = ComposePageTitle($"category: {category.Name}"),
-                        Description = ComposePageDescription($"category: {category.Name}"),
-                    },
-                };
-
-                return View(viewModel);
-            }
-
-            if (tagSlug != null)
-            {
-                var tag = await this.tagService.FindTag(tagSlug);
-
-                var viewModel = new BlogIndexViewModel
-                {
-                    Posts = await blogService.GetBlogPostsByTag(tagSlug),
-                    NavigationState = new BlogPostsByTagNavigationState
-                    {
-                        Tag = tag
-                    },
-                    SEOViewModel = new SEOViewModel()
-                    {
-                        Title = ComposePageTitle($"tag: {tag.Name}"),
-                        Description = ComposePageDescription($"tag: {tag.Name}"),
-                    },
-                };
-
-                return View(viewModel);
-            }
-
             return View(new BlogIndexViewModel
             {
                 Posts = await this.blogService.GetBlogPosts(),
@@ -99,6 +38,70 @@ namespace ButterCMS.Starter.Controllers
                     Description = ComposePageDescription("all posts"),
                 },
             });
+        }
+
+        [Route("blog/category/{slug}", Name = "BlogPostsByCategory")]
+        public async Task<ActionResult> PostsByCategory(string slug)
+        {
+            var category = await this.categoryService.FindCategory(slug);
+
+            var viewModel = new BlogIndexViewModel
+            {
+                Posts = await blogService.GetBlogPostsByCategory(slug),
+                NavigationState = new BlogPostsByCategoryNavigationState
+                {
+                    Category = category
+                },
+                SEOViewModel = new SEOViewModel()
+                {
+                    Title = ComposePageTitle($"category: {category.Name}"),
+                    Description = ComposePageDescription($"category: {category.Name}"),
+                },
+            };
+
+            return View("Index", viewModel);
+        }
+
+        [Route("blog/tag/{slug}", Name = "BlogPostsByTag")]
+        public async Task<ActionResult> PostsByTag(string slug)
+        {
+            var tag = await this.tagService.FindTag(slug);
+
+            var viewModel = new BlogIndexViewModel
+            {
+                Posts = await blogService.GetBlogPostsByTag(slug),
+                NavigationState = new BlogPostsByTagNavigationState
+                {
+                    Tag = tag
+                },
+                SEOViewModel = new SEOViewModel()
+                {
+                    Title = ComposePageTitle($"tag: {tag.Name}"),
+                    Description = ComposePageDescription($"tag: {tag.Name}"),
+                },
+            };
+
+            return View("Index", viewModel);
+        }
+
+        [Route("{controller}/{action}")]
+        public async Task<ActionResult> Search(string q)
+        {
+            var viewModel = new BlogIndexViewModel
+            {
+                Posts = await blogService.SearchBlogPosts(q),
+                NavigationState = new SearchedBlogPostsNavigationState
+                {
+                    SearchText = q
+                },
+                SEOViewModel = new SEOViewModel()
+                {
+                    Title = ComposePageTitle($"search result for {q}"),
+                    Description = ComposePageDescription($"search results for {q}"),
+                },
+            };
+
+            return View("Index", viewModel);
         }
 
         [Route("blog/{slug}", Name = "BlogPost")]

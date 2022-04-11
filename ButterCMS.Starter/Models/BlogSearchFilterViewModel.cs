@@ -3,6 +3,7 @@ namespace ButterCMS.Starter.Models
 {
     public class BlogSearchFilterViewModel
     {
-        public string SearchQuery { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:Naming Styles", Justification = "According to specification")]
+        public string q { get; set; }
     }
 }

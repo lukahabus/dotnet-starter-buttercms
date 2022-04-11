@@ -40,7 +40,7 @@
             </div>
 
             <aside class="col-12 col-lg-4">
-                @await Html.PartialAsync("_BlogSearchFilter", new BlogSearchFilterViewModel { SearchQuery = null })
+                @await Html.PartialAsync("_BlogSearchFilter", new BlogSearchFilterViewModel { q = null })
 
                 @await Component.InvokeAsync("BlogCategoriesFilter")
             </aside>

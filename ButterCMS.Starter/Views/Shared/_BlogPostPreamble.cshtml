@@ -20,7 +20,7 @@
         <li>
             @foreach (var tag in Model.Tags)
             {
-                <a href="@Url.RouteUrl("BlogPost", new { slug = Model.Slug })"><i class="lni lni-tag"></i>@tag.Name</a>
+                <a href="@Url.RouteUrl("BlogPostsByTag", new { slug = tag.Slug })"><i class="lni lni-tag"></i>@tag.Name</a>
             }
         </li>
     </ul>
