@@ -101,7 +101,7 @@ namespace ButterCMS.Starter.Controllers
             });
         }
 
-        [Route("{controller}/{action}/{slug}")]
+        [Route("blog/{slug}", Name = "BlogPost")]
         public async Task<ActionResult> Post(string slug)
         {
             return View(await this.blogService.GetBlogPost(slug));

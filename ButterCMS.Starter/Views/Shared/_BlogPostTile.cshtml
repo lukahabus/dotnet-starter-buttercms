@@ -12,11 +12,11 @@
             </div>
         }
         <div class="blog-body">
-            <h5 class="package-name"><a asp-controller="blog" asp-action="post" asp-route-slug="@Model.Slug">@Model.Title</a></h5>
+            <h5 class="package-name"><a href="@Url.RouteUrl("BlogPost", new { slug = Model.Slug })">@Model.Title</a></h5>
             <p>@Model.Summary</p>
         </div>
         <div class="blog-footer">
-            <a asp-controller="blog" asp-action="post" asp-route-slug="@Model.Slug" class="main-btn btn-hover">Read More</a>
+            <a href="@Url.RouteUrl("BlogPost", new { slug = Model.Slug })" class="main-btn btn-hover">Read More</a>
         </div>
     </div>
 </div>
