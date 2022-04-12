@@ -1,0 +1,12 @@
+{
+  "name": "ButterCMS.Starter",
+  "description": "Demo app on ASP.NET Core",
+  "repository": "https://github.com/ButterCMS/dotnet-starter-buttercms",
+  "keywords": ["aspnet", "core"],
+  "stack": "heroku-20",
+  "buildpacks": [
+    {
+      "url": "https://github.com/jincod/dotnetcore-buildpack"
+    }
+  ]
+}

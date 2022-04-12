@@ -6,6 +6,8 @@ You can view a [live demo hosted on Azure](https://dotnet-starter-buttercms.azur
 
 [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fvlnevyhosteny%2FButterCMS.Starter%2Fmain%2F.azure%2Ftemplate%2Ftemplate.json)
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ButterCMS/dotnet-starter-buttercms)
+
 ## 1. Installation
 
 First, clone the repo and install the dependencies by running `dotnet restore`:
