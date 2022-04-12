@@ -4,7 +4,7 @@ This .NET starter project fully integrates with dynamic sample content from your
 
 You can view a [live demo hosted on Azure](https://dotnet-starter-buttercms.azurewebsites.net), or you can click the button below to deploy your own copy of our starter project to the provider of your choice.
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fvlnevyhosteny%2FButterCMS.Starter%2Fmain%2F.azure%2Ftemplate%2Ftemplate.json)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ButterCMS/dotnet-starter-buttercms)
 
 ## 1. Installation
 
@@ -36,8 +36,17 @@ $ dotnet run
 
 Congratulations! Your starter project is now live. To view your project, point your browser to [https://localhost:5001](https://localhost:5001).
 
-## 4. Deploy on Azure
+### 4) Deploy on Heroku
 
-Deploy your .NET app using Azure. With the click of a button, you'll create a copy of your starter project in your Git provider account, instantly deploy it, and institute a full content workflow connected to your ButterCMS account. Smooth.
+Our starter app can be deployed to Heroku with the click of a button:
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fvlnevyhosteny%2FButterCMS.Starter%2Fmain%2F.azure%2Ftemplate%2Ftemplate.json)
+1. Create a Heroku account at https://signup.heroku.com.
+2. Click the button below and fill in an app name and your Butter API token. Then click "deploy".
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ButterCMS/dotnet-starter-buttercms)
+
+### 5.) Previewing and Draft Changes
+
+Your starter app allows you to preview draft changes made to content in your
+ButterCMS.com account by default; to see draft changes, add '?preview=1' to the end of any
+URL (e.g., http://localhost:8000/?preview=1)
