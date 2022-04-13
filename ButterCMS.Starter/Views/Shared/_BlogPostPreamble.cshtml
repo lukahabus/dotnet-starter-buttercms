@@ -6,7 +6,7 @@
 
 <div class="blog-roll-card-meta">
     <h2 class="blog-roll-card-header">
-        <a asp-controller="Blog" asp-action="Post" asp-route-slug="@Model.Slug">@Model.Title</a>
+        <a href="@Url.RouteUrl("BlogPost", new { slug = Model.Slug })">@Model.Title</a>
     </h2>
     <ul class="blog-roll-card-meta-info">
         <li>
@@ -20,7 +20,7 @@
         <li>
             @foreach (var tag in Model.Tags)
             {
-                <a asp-controller="Blog" asp-action="Index" asp-route-tagSlug="@tag.Slug"><i class="lni lni-tag"></i>@tag.Name</a>
+                <a href="@Url.RouteUrl("BlogPostsByTag", new { slug = tag.Slug })"><i class="lni lni-tag"></i>@tag.Name</a>
             }
         </li>
     </ul>

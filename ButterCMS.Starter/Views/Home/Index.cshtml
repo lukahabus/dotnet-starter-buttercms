@@ -5,6 +5,11 @@
     ViewBag.Description = Model.SEOViewModel.Description;
 }
 
+@section Scripts
+{
+    <script src="~/assets/js/client-slider.js"></script>
+}
+
 @await Html.PartialAsync("_HeroSection", Model.HeroSection)
 
 @await Html.PartialAsync("_ImageWithTextSection", Model.AboutSection)

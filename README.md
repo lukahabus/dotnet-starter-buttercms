@@ -23,7 +23,7 @@ $ dotnet restore
 To fetch your ButterCMS content, add your API token as an environment variable.
 
 ```console
-$ dotnet user-secrets set "ButterCMS:APIKey" "<YOUR API Token>"
+$ dotnet user-secrets set "ButterCMSAPIKey" "<YOUR API Token>"
 ```
 
 ### 3. Run local server
