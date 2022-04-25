@@ -26,6 +26,7 @@ namespace ButterCMS.Starter.Controllers
             this.tagService = tagService;
         }
 
+        [Route("blog/")]
         public async Task<ActionResult> Index()
         {
             return View(new BlogIndexViewModel
