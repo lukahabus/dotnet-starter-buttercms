@@ -47,6 +47,4 @@ Our starter app can be deployed to Heroku with the click of a button:
 
 ### 5.) Previewing and Draft Changes
 
-Your starter app allows you to preview draft changes made to content in your
-ButterCMS.com account by default; to see draft changes, add '?preview=1' to the end of any
-URL (e.g., http://localhost:8000/?preview=1)
+By default, your starter project is set up to allow previewing of draft changes saved in your ButterCMS.com account. To disable this functionality, set `ButterCMSPreview` to `false` in `appsettings.json`.
