@@ -20,7 +20,7 @@
     <None Remove="Attributes\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="ButterCMS" Version="1.4.0" />
+    <PackageReference Include="ButterCMS" Version="1.4.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
   </ItemGroup>
   <ItemGroup>

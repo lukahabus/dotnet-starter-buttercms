@@ -7,11 +7,14 @@ namespace ButterCMS.Starter.Services
     {
         private readonly string apiKey;
 
+        private readonly bool preview;
+
         public ButterCMSClientService(IConfiguration configuration)
         {
             this.apiKey = configuration["ButterCMSAPIKey"];
+            this.preview = bool.Parse(configuration["ButterCMSPreview"]);
         }
 
-        public ButterCMSClient GetClient() => new ButterCMSClient(this.apiKey);
+        public ButterCMSClient GetClient() => new ButterCMSClient(this.apiKey, null, 3, null, this.preview);
     }
 }
