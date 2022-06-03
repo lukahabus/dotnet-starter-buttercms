@@ -23,7 +23,7 @@ $ dotnet restore
 To fetch your ButterCMS content, add your API token as an environment variable.
 
 ```console
-$ dotnet user-secrets set "ButterCMSAPIKey" "<YOUR API Token>"
+$ dotnet user-secrets set "ButterCMSAPIKey" "<YOUR API Token>" --project ButterCMS.Starter
 ```
 
 ### 3. Run local server
@@ -31,7 +31,7 @@ $ dotnet user-secrets set "ButterCMSAPIKey" "<YOUR API Token>"
 To view the app in the browser, you'll need to run the local development server:
 
 ```console
-$ dotnet run
+$ dotnet run --project ButterCMS.Starter
 ```
 
 Congratulations! Your starter project is now live. To view your project, point your browser to [https://localhost:5001](https://localhost:5001).
