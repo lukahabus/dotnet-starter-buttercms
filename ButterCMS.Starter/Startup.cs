@@ -27,6 +27,12 @@ namespace ButterCMS.Starter
             services.AddScoped<TagService>();
             services.AddScoped<NavigationService>();
             services.AddScoped<PageService>();
+
+            services.AddRouting(options =>
+            {
+                options.AppendTrailingSlash = true;
+                options.LowercaseUrls = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
