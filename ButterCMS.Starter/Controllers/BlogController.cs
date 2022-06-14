@@ -98,7 +98,7 @@ namespace ButterCMS.Starter.Controllers
                 SEOViewModel = new SEOViewModel()
                 {
                     Title = ComposePageTitle($"search result for {q}"),
-                    Description = ComposePageDescription($"search results for {q}"),
+                    Description = ComposePageDescription($"search results for query: \"{q}\""),
                 },
             };
 
