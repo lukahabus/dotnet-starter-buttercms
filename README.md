@@ -34,7 +34,7 @@ To view the app in the browser, you'll need to run the local development server:
 $ dotnet run --project ButterCMS.Starter
 ```
 
-Congratulations! Your starter project is now live. To view your project, point your browser to [https://localhost:5001](https://localhost:5001).
+Congratulations! Your starter project is now live. To view your project, point your browser to [http://localhost:5000](http://localhost:5000).
 
 ### 4) Deploy on Heroku
 
