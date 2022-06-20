@@ -9,7 +9,7 @@
                         @Model.NavigationTitle
                     </h2>
                     <ul class="breadcrumb-nav">
-                        <li><a asp-controller="Home">Home</a></li>
+                        <li><a asp-controller="home" asp-action="index">Home</a></li>
                         @if (Model.GetType() != typeof(AllBlogPostsNavigationState))
                         {
                             <li><a asp-controller="blog" asp-action="index">Blog</a></li>
