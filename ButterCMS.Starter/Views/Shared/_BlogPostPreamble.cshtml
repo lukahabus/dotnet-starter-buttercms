@@ -9,8 +9,8 @@
         <a href="@Url.RouteUrl("BlogPost", new { slug = Model.Slug })">@Model.Title</a>
     </h2>
     <ul class="blog-roll-card-meta-info">
-        <li>
-            <a href="javascript:void(0)"><img src="@(Model.Author.ProfileImage ?? authorProfilePicturePlaceHolder)" alt="#">@Model.Author.FirstName @Model.Author.LastName</a>
+        <li> 
+            <a href="javascript:void(0)"><img src="@(String.IsNullOrEmpty(Model.Author.ProfileImage) ? authorProfilePicturePlaceHolder : Model.Author.ProfileImage)" alt="#">@Model.Author.FirstName @Model.Author.LastName</a>
         </li>
         <li>
             <a href="javascript:void(0)">
