@@ -21,6 +21,11 @@ namespace ButterCMS.Starter.Services
         {
             var response = await this.client.RetrievePageAsync<LandingPageJSONObject>(this.landingPageType, pageSlug);
 
+            if (response == null)
+            {
+                return null;
+            }
+
             var result = new LandingPageViewModel()
             {
                 SEOViewModel = new SEOViewModel()
