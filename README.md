@@ -6,6 +6,10 @@ You can view a [live demo hosted on Heroku](https://dotnet-starter-buttercms-tmp
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ButterCMS/dotnet-starter-buttercms)
 
+## Prerequisites
+
+- `.NET Core SDK` at 3.1 or higher
+
 ## 1. Installation
 
 First, clone the repo and install the dependencies by running `dotnet restore`:
