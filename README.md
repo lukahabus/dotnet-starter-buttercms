@@ -56,11 +56,11 @@ By default, your starter project is set up to allow previewing of draft changes 
 To set in environment variables on **Mac/Linux**:
 
 ```console
-export ButterCMSPreview=false
+$ export ButterCMSPreview=false
 ```
 
 To set in environment variables on **Windows**:
 
 ```console
-set ButterCMSPreview=false
+$ set ButterCMSPreview=false
 ```
