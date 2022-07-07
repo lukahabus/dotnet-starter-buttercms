@@ -51,4 +51,16 @@ Our starter app can be deployed to Heroku with the click of a button:
 
 ### 5.) Previewing and Draft Changes
 
-By default, your starter project is set up to allow previewing of draft changes saved in your ButterCMS.com account. To disable this functionality, set `ButterCMSPreview` to `false` in `appsettings.json`.
+By default, your starter project is set up to allow previewing of draft changes saved in your ButterCMS.com account. To disable this functionality, set `ButterCMSPreview` value to `false` in your environment variables or `appsettings.json`. Note that a value set in your environment variables takes precedence over `appsettings.json`.
+
+To set in environment variables on **Mac/Linux**:
+
+```console
+$ export ButterCMSPreview=false
+```
+
+To set in environment variables on **Windows**:
+
+```console
+$ set ButterCMSPreview=false
+```
