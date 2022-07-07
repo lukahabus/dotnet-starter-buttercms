@@ -37,7 +37,7 @@ namespace ButterCMS.Starter.Services
 
             foreach (var item in response.Data.Fields.body)
             {
-                string scrollAnchorId = this.GetStringFieldFromJson(item, "scroll_anchor_id");
+                string scrollAnchorId = this.GetStringFieldFromJson(item, "scroll_anchor_id").Replace("#", "");
 
                 string headline = this.GetStringFieldFromJson(item, "headline");
 
