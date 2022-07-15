@@ -30,7 +30,14 @@ namespace ButterCMS.Starter.Controllers
         [Route("/landing-page/{slug}")]
         public async Task<IActionResult> Index(string slug = null)
         {
-            return View(await this.pageService.GetLandingPage(slug ?? this.defaultLandingPageSlug));
+            var viewModel = await this.pageService.GetLandingPage(slug ?? this.defaultLandingPageSlug);
+
+            if (viewModel == null)
+            {
+                return NotFound();
+            }
+
+            return View(viewModel);
         }
     }
 }
