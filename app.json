@@ -1,5 +1,5 @@
 {
-  "name": "dotnet-starter-buttercms-demo",
+  "name": "dotnet-starter-buttercms",
   "description": "Drop-in proof-of-concept ASP.NET Core app, fully integrated with your ButterCMS account.",
   "repository": "https://github.com/ButterCMS/dotnet-starter-buttercms",
   "keywords": ["aspnet", "core", "buttercms", "cms", "blog"],
