@@ -4,7 +4,7 @@ This .NET starter project fully integrates with dynamic sample content from your
 
 You can view a [live demo hosted on Heroku](https://dotnet-starter-buttercms-tmp.herokuapp.com), or you can click the button below to deploy your own copy of our starter project to the provider of your choice.
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ButterCMS/dotnet-starter-buttercms)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ButterCMS/dotnet-starter-buttercms&env%5ButterCMSAPIKey%5D=check%20https://buttercms.com/settings)
 
 ## Prerequisites
 
@@ -55,7 +55,7 @@ Our starter app can be deployed to Heroku with the click of a button:
 1. Create a Heroku account at https://signup.heroku.com.
 2. Click the button below and fill in an app name and your Butter API token. Then click "deploy".
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ButterCMS/dotnet-starter-buttercms)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ButterCMS/dotnet-starter-buttercms&env%5ButterCMSAPIKey%5D=check%20https://buttercms.com/settings)
 
 ### 5.) Previewing and Draft Changes
 
