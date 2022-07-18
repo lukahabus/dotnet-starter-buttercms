@@ -72,3 +72,9 @@ To set in environment variables on **Windows**:
 ```console
 $ set ButterCMSPreview=false
 ```
+
+For **PowerShell** use:
+
+```console
+$env:ButterCMSPreview="false"
+```
