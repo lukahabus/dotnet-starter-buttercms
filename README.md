@@ -10,6 +10,14 @@ You can view a [live demo hosted on Heroku](https://dotnet-starter-buttercms-tmp
 
 - `.NET Core SDK` at 3.1 or higher
 
+Note for Windows users - This SDK has been tested on the following configuration:
+
+      6.0.300 .NET SDK
+
+      .NET Runtimes:
+      Microsoft.AspNetCore.App 3.1.25
+      Microsoft.NETCore.App 3.1.25
+
 ## 1. Installation
 
 First, clone the repo and install the dependencies by running `dotnet restore`:
@@ -51,7 +59,7 @@ Our starter app can be deployed to Heroku with the click of a button:
 
 ### 5.) Previewing and Draft Changes
 
-By default, your starter project is set up to allow previewing of draft changes saved in your ButterCMS.com account. To disable this functionality, set `ButterCMSPreview` to `false` in `appsettings.json`.
+By default, your starter project is set up to allow previewing of draft changes saved in your ButterCMS.com account. To disable this functionality, set `ButterCMSPreview` value to `false` in your environment variables or `appsettings.json`. Note that a value set in your environment variables takes precedence over `appsettings.json`.
 
 To set in environment variables on **Mac/Linux**:
 

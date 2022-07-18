@@ -10,14 +10,29 @@
     <script src="~/assets/js/client-slider.js"></script>
 }
 
-@await Html.PartialAsync("_HeroSection", Model.HeroSection)
+@if (Model.HeroSection != null)
+{
+    @await Html.PartialAsync("_HeroSection", Model.HeroSection)
+}
 
-@await Html.PartialAsync("_ImageWithTextSection", Model.AboutSection)
+@if (Model.AboutSection != null)
+{
+    @await Html.PartialAsync("_ImageWithTextSection", Model.AboutSection)
+}
 
-@await Html.PartialAsync("_FeaturesSection", Model.FeaturesSection)
+@if (Model.FeaturesSection != null)
+{
+    @await Html.PartialAsync("_FeaturesSection", Model.FeaturesSection)
+}
 
-@await Html.PartialAsync("_ImageWithTextSection", Model.TryitSection)
+@if (Model.TryitSection != null)
+{
+    @await Html.PartialAsync("_ImageWithTextSection", Model.TryitSection)
+}
 
-@await Html.PartialAsync("_TestimonialsSection", Model.TestimonialsSection)
+@if (Model.TestimonialsSection != null)
+{
+    @await Html.PartialAsync("_TestimonialsSection", Model.TestimonialsSection)
+}
 
 @await Component.InvokeAsync("BlogSection")

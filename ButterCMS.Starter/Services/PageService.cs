@@ -21,6 +21,11 @@ namespace ButterCMS.Starter.Services
         {
             var response = await this.client.RetrievePageAsync<LandingPageJSONObject>(this.landingPageType, pageSlug);
 
+            if (response == null)
+            {
+                return null;
+            }
+
             var result = new LandingPageViewModel()
             {
                 SEOViewModel = new SEOViewModel()
@@ -32,7 +37,7 @@ namespace ButterCMS.Starter.Services
 
             foreach (var item in response.Data.Fields.body)
             {
-                string scrollAnchorId = this.GetStringFieldFromJson(item, "scroll_anchor_id");
+                string scrollAnchorId = this.GetStringFieldFromJson(item, "scroll_anchor_id").Replace("#", "");
 
                 string headline = this.GetStringFieldFromJson(item, "headline");
 
