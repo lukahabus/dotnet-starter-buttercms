@@ -111,7 +111,7 @@ namespace ButterCMS.Starter.Controllers
             return View(await this.blogService.GetBlogPost(slug));
         }
 
-        private string ComposePageTitle(string type) => $"Sample Blog - {type}";
+        private string ComposePageTitle(string type) => $"Servus - Događaji";
 
         private string ComposePageDescription(string type) => $"Sample blog powered by ButterCMS, showing {type}";
     }

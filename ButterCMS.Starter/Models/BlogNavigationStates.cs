@@ -12,14 +12,14 @@ namespace ButterCMS.Starter.Models
 
     public class AllBlogPostsNavigationState : IBlogNavigationState
     {
-        public string NavigationTitle { get; } = "All Blog Posts";
+        public string NavigationTitle { get; } = "Svi događaji";
 
-        public string NavigationItemText { get; } = "All blog posts";
+        public string NavigationItemText { get; } = "Svi događaji";
     }
 
     public class BlogPostsByCategoryNavigationState : IBlogNavigationState
     {
-        public string NavigationTitle { get; } = "Blog Posts by Category";
+        public string NavigationTitle { get; } = "Događaji po kategorijama";
 
         public Category Category { get; set; }
 
@@ -27,14 +27,14 @@ namespace ButterCMS.Starter.Models
         {
             get
             {
-                return $"Category: {Category.Name}";
+                return $"Kategorija: {Category.Name}";
             }
         }
     }
 
     public class BlogPostsByTagNavigationState : IBlogNavigationState
     {
-        public string NavigationTitle { get; } = "Blog Posts by Tag";
+        public string NavigationTitle { get; } = "Događaji po tagovima";
 
         public Tag Tag { get; set; }
 
@@ -49,7 +49,7 @@ namespace ButterCMS.Starter.Models
 
     public class SearchedBlogPostsNavigationState : IBlogNavigationState
     {
-        public string NavigationTitle { get; } = "Search Results";
+        public string NavigationTitle { get; } = "Rezultati pretrage";
 
         public string SearchText { get; set; }
 
@@ -57,7 +57,7 @@ namespace ButterCMS.Starter.Models
         {
             get
             {
-                return $"Search: {SearchText}";
+                return $"Pretraga: {SearchText}";
             }
         }
     }
