@@ -35,8 +35,7 @@
     @RenderBody()
 
     @if (ViewBag.NoFooter == null || !ViewBag.NoFooter)
-        @await Component.InvokeAsync("Footer");
-    }
+        {@await Component.InvokeAsync("Footer")};
 
     <a href="#" class="scroll-top btn-hover">
         <i class="lni lni-chevron-up"></i>
